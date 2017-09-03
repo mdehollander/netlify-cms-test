@@ -40,7 +40,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Items Per Page, name: paginate, widget: number}
 
   - name: "pages"
-    label: "Pages"
+    label: "More Pages"
     files:
       - file: "content/products.md"
         label: "Products Page"
