@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Demo hugo site"
-baseurl = "http://example.com"
+baseurl = "http://biomatt.nl"
 theme = "hugo-future-imperfect"
 
 [params]
