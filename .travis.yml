@@ -2,6 +2,10 @@
 dist: trusty
 sudo: required
 
+branches:
+  only:
+    - master
+
 install:
  - sudo apt-get install -y jq
  - URL=$( curl -s "https://api.github.com/repos/gohugoio/hugo/releases/latest" | jq -r '.assets[] | select(.name | endswith("Linux-64bit.deb")) | .browser_download_url' )

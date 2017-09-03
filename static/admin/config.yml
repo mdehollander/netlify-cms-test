@@ -3,6 +3,8 @@ backend:
   repo: mdehollander/netlify-cms-test
   branch: master
 
+publish_mode: editorial_workflow
+
 media_folder: media_folder
 
 collections:
