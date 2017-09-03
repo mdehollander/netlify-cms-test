@@ -7,11 +7,34 @@ publish_mode: editorial_workflow
 
 media_folder: media_folder
 
-collections:
-  - name: post
-    label: Post
-    folder: content/blog
-    create: true
-    fields:
-      - {name: title, label: Title}
-      - {name: body, label: Body, widget: markdown}
+collections: # A list of collections the CMS should be able to edit
+  - name: blog # Used in routes, ie.: /admin/collections/:slug/edit
+    label: Blog Post # Used in the UI, ie.: New Post
+    folder: content/blog # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: Date/Time, name: date, widget: datetime, format: YYYY-MM-DD hh:mm:ss}
+      - {label: Post Title, name: title, widget: string}
+      - {label: Content, name: body, widget: markdown}
+
+  - name: page # Used in routes, ie.: /admin/collections/:slug/edit
+    label: Pages # Used in the UI, ie.: New Post
+    folder: content # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: Page Title, name: title, widget: string}
+      - {label: Content, name: body, widget: markdown}
+
+  - name: settings # Used in routes, ie.: /admin/collections/:slug/edit
+    label: Settings
+    editor:
+      preview: false
+    files:
+      - file: config.yml
+        label: Site Settings
+        name: site
+        fields:
+          - {label: Site Title, name: title, widget: string}
+          - {label: Items Per Page, name: paginate, widget: number}
