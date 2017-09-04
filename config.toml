@@ -1,4 +1,4 @@
-baseurl             = "https://you.github.io/"
+baseurl             = "http://biomatt.nl/"
 builddrafts         = false
 canonifyurls        = true
 contentdir          = "content"
