@@ -1,4 +1,4 @@
-baseurl             = "http://biomatt.nl/"
+baseurl             = "https://biomatt.nl/"
 builddrafts         = false
 canonifyurls        = true
 contentdir          = "content"
